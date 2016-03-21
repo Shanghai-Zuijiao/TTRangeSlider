@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "NumberFormatter.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet TTRangeSlider *rangeSlider;
 @property (weak, nonatomic) IBOutlet TTRangeSlider *rangeSliderCurrency;
@@ -42,16 +42,23 @@
     
     //custom number formatter range slider
     self.rangeSliderCustom.delegate = self;
+    self.rangeSliderCustom.tintColor = [UIColor clearColor];
     self.rangeSliderCustom.minValue = 0;
-    self.rangeSliderCustom.maxValue = 100;
-    self.rangeSliderCustom.selectedMinimum = 40;
-    self.rangeSliderCustom.selectedMaximum = 60;
-    self.rangeSliderCustom.handleImage = [UIImage imageNamed:@"custom-handle"];
-    self.rangeSliderCustom.selectedHandleDiameterMultiplier = 1;
+    self.rangeSliderCustom.maxValue = 1439;
+//    self.rangeSliderCustom.selectedMinimum = 50;
+//    self.rangeSliderCustom.selectedMaximum = 80;
+    self.rangeSliderCustom.handleColor = [UIColor greenColor];
+    self.rangeSliderCustom.handleBorderColor = [UIColor redColor];
+    self.rangeSliderCustom.handleBorderWidth = 1;
+    self.rangeSliderCustom.handleDiameter = 30;
+    self.rangeSliderCustom.selectedHandleDiameterMultiplier = 1.3;
     self.rangeSliderCustom.tintColorBetweenHandles = [UIColor redColor];
-    self.rangeSliderCustom.lineHeight = 10;
-    NSNumberFormatter *customFormatter = [[NSNumberFormatter alloc] init];
-    customFormatter.positiveSuffix = @"B";
+    self.rangeSliderCustom.lineHeight = 20;
+    self.rangeSliderCustom.textColor = [UIColor grayColor];
+    self.rangeSliderCustom.slideLineBorderWidth = 1;
+    self.rangeSliderCustom.slideLineBorderColor = [UIColor redColor];
+    NumberFormatter *customFormatter = [[NumberFormatter alloc] init];
+//    customFormatter.positiveSuffix = @"B";
     self.rangeSliderCustom.numberFormatterOverride = customFormatter;
 }
 

@@ -42,7 +42,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
 
     _enableStep = NO;
     _step = 0.1f;
-
+    //
     _hideLabels = NO;
     
     _handleDiameter = 16.0;
@@ -534,6 +534,18 @@ static const CGFloat kLabelsFontSize = 12.0f;
     self.rightHandle.backgroundColor = [handleColor CGColor];
 }
 
+-(void)setHandleBorderWidth:(CGFloat)handleBorderWidth{
+    _handleBorderWidth = handleBorderWidth;
+    self.leftHandle.borderWidth = handleBorderWidth;
+    self.rightHandle.borderWidth = handleBorderWidth;
+}
+
+-(void)setHandleBorderColor:(UIColor *)handleBorderColor{
+    _handleBorderColor = handleBorderColor;
+    self.leftHandle.borderColor = [handleBorderColor CGColor];
+    self.rightHandle.borderColor = [handleBorderColor CGColor];
+}
+
 -(void)setHandleDiameter:(CGFloat)handleDiameter{
     _handleDiameter = handleDiameter;
     
@@ -548,6 +560,21 @@ static const CGFloat kLabelsFontSize = 12.0f;
 -(void)setTintColorBetweenHandles:(UIColor *)tintColorBetweenHandles{
     _tintColorBetweenHandles = tintColorBetweenHandles;
     self.sliderLineBetweenHandles.backgroundColor = [tintColorBetweenHandles CGColor];
+}
+
+-(void)setTextColor:(UIColor *)textColor{
+    _textColor = textColor;
+    self.minLabel.foregroundColor = textColor.CGColor;
+    self.maxLabel.foregroundColor = textColor.CGColor;
+}
+
+-(void)setSlideLineBorderWidth:(CGFloat)slideLineBorderWidth{
+    _slideLineBorderWidth = slideLineBorderWidth;
+    self.sliderLine.borderWidth = slideLineBorderWidth;
+}
+-(void)setSlideLineBorderColor:(UIColor *)slideLineBorderColor{
+    _slideLineBorderColor = slideLineBorderColor;
+    self.sliderLine.borderColor = slideLineBorderColor.CGColor;
 }
 
 -(void)setLineHeight:(CGFloat)lineHeight{

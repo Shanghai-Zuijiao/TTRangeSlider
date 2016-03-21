@@ -86,6 +86,10 @@ IB_DESIGNABLE
  */
 @property (nonatomic, strong) UIColor *handleColor;
 
+@property (nonatomic, assign) CGFloat handleBorderWidth;
+
+@property (nonatomic, strong) UIColor *handleBorderColor;
+
 /**
  *Handle diameter (default 16.0)
  */
@@ -101,6 +105,11 @@ IB_DESIGNABLE
  */
 @property (nonatomic, strong) UIColor *tintColorBetweenHandles;
 
+@property (nonatomic, strong) UIColor *textColor;
+
+@property (nonatomic, assign) CGFloat slideLineBorderWidth;
+
+@property (nonatomic, strong) UIColor *slideLineBorderColor;
 /**
  *Set the slider line height (default 1.0)
  */
